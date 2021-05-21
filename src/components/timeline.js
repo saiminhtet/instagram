@@ -1,4 +1,5 @@
 /* eslint-disable no-nested-ternary */
+import { useContext } from 'react';
 import Skeleton from 'react-loading-skeleton';
 import LoggedInUserContext from '../context/logged-in-user';
 import UserContext from '../context/user';
@@ -6,9 +7,9 @@ import usePhotos from '../hooks/use-photos';
 import Post from './post/index';
 
 export default function Timeline() {
-  const { user } = UserContext(LoggedInUserContext);
+  const { user } = useContext(LoggedInUserContext);
   // we need to get the logged in user's photos (hook)
-  const { photos } = usePhotos();
+  const { photos } = usePhotos(user);
   // on loading the photos, we need to use react skeleton
   // if we have photos, render them (create a post component)
   // if the user has no photos, tell them to create some photos

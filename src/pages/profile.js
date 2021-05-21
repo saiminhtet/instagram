@@ -8,7 +8,7 @@ import UserProfile from '../components/profile';
 export default function Profile() {
   const { username } = useParams();
   const [user, setUser] = useState(null);
-  const [userExists, setUserExists] = useState(false);
+  // const [userExists, setUserExists] = useState(false);
   const history = useHistory();
 
   useEffect(() => {
