@@ -23,7 +23,7 @@ export default function Header() {
             </h1>
           </div>
           <div className="text-gray-700 text-enter flex items-center align-items">
-            {user.username ? (
+            {loggedInUser ? (
               <>
                 <Link to={ROUTES.DASHBOARD} aria-label="Dashboard">
                   <svg
